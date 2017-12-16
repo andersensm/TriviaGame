@@ -1,0 +1,58 @@
+.jumbotron {
+    margin: 200px 40px;
+    border: 1.5px solid black;
+    border-bottom: 3px solid black;
+    opacity: 0.85;
+}
+.beginpage {
+  padding: 0px;
+  background-color: #A991D4;
+}
+.page1 {
+  padding: 0px;
+  background-color: #48D1CC;
+}
+h1.display-3 {
+  font-weight: 600;
+  font-size: 125px;
+  color: black;
+  margin: 20px;
+  text-align: center;
+}
+.display-3 {
+  margin: 20px;
+  text-align: center;
+  color: black;
+}
+p {
+    font-size: 35px;
+    margin: 20px;
+    text-align: center;
+}
+.test1 {
+  padding: 0px;
+  background-color: #A991D4;
+}
+.begin, .btn-primary, .btn-secondary, .btn-success, .btn-info, .btn-warning, .btn-primary, .btn-danger, .btn-link{
+  margin: 20px;
+  font-size: 35px;
+  display:block;
+}
+h1, h2, p, body {
+   font-family: 'WaltographRegular';
+   font-weight: normal;
+   font-style: normal;
+}
+body {
+  background-size: cover;
+  background-image: url("../images/disney.jpg");
+}
+.answer {
+  color: black;
+}
+img {
+    margin: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
