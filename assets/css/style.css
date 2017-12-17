@@ -12,6 +12,14 @@
   padding: 0px;
   background-color: #48D1CC;
 }
+.page2 {
+  padding: 0px;
+  background-color: #FFFF00;
+}
+.page3{
+  padding: 0px;
+  background-color: #8B4513;
+}
 h1.display-3 {
   font-weight: 600;
   font-size: 125px;
@@ -29,10 +37,6 @@ p {
     margin: 20px;
     text-align: center;
 }
-.test1 {
-  padding: 0px;
-  background-color: #A991D4;
-}
 .begin, .btn-primary, .btn-secondary, .btn-success, .btn-info, .btn-warning, .btn-primary, .btn-danger, .btn-link{
   margin: 20px;
   font-size: 35px;
@@ -45,6 +49,7 @@ h1, h2, p, body {
 }
 body {
   background-size: cover;
+  background-repeat: no-repeat;
   background-image: url("../images/disney.jpg");
 }
 .answer {
@@ -55,4 +60,7 @@ img {
     display: block;
     margin: 0 auto;
     margin-bottom: 20px;
+    border: 1.5px solid black;
+    border-bottom: 3px solid black;
+
 }
