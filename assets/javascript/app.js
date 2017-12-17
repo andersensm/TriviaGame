@@ -8,15 +8,14 @@ var q1false;
 var q1true;
 var q2false;
 var q2true;
-
-//-----Still Fix up
-var p3false;
-var p3true;
-var p4false;
-var p4true;
-var p5false;
-var p5true;
-//-----Still Fix up
+var q3false;
+var q3true;
+var q4false;
+var q4true;
+var q5false;
+var q5true;
+var correct = 0
+var incorrect = 0
 
 if (begin === false) {
   $(".start").toggle(true);
@@ -35,9 +34,8 @@ if (begin === false) {
   $(".questionpage5").toggle(false);
   $(".questionpage5true").toggle(false);
   $(".questionpage5false").toggle(false);
-
-
-}
+  $(".conclusionpage6").toggle(false);
+ }
 
 
 
@@ -72,12 +70,48 @@ function sevenSeconds5() {
   $(".questionpage5false").toggle(false);
   $(".questionpage5true").toggle(false);
   $(".questionpage5").toggle(false)
+  $(".conclusionpage6").toggle(true);
+  conclusionpage()
+}
+/*
+function sevenSeconds6() {
+  $(".conclusionpage6").toggle(false)
   $(".start").toggle(true);
   resetGame()
 }
+
+*/
 function resetGame() {
   begin = false
   $(".start").toggle(true);
+  $(".questionpage1").toggle(false);
+  $(".questionpage1true").toggle(false);
+  $(".questionpage1false").toggle(false);
+  $(".questionpage2").toggle(false);
+  $(".questionpage2true").toggle(false);
+  $(".questionpage2false").toggle(false);
+  $(".questionpage3").toggle(false);
+  $(".questionpage3true").toggle(false);
+  $(".questionpage3false").toggle(false);
+  $(".questionpage4").toggle(false);
+  $(".questionpage4true").toggle(false);
+  $(".questionpage4false").toggle(false);
+  $(".questionpage5").toggle(false);
+  $(".questionpage5true").toggle(false);
+  $(".questionpage5false").toggle(false);
+  $(".conclusionpage6").toggle(false);
+  q1false;
+  q1true;
+  q2false;
+  q2true;
+  q3false;
+  q3true;
+  q4false;
+  q4true;
+  q5false;
+  q5true;
+  correct = 0
+  incorrect = 0
 }
 
 
@@ -191,6 +225,89 @@ function questionpage1() {
             }
         })
       }
+      function questionpage4() {
+          //need to start timer, get timeout setup
+          $("#q4p1false,#q4p2false,#q4p3false").on("click", function() {
+              q4false = true
+              console.log('q4false',q4false)
+              if (q4false === true) {
+                //new window display time Remaining
+                //text that says 'Incorrect'
+                //tell the correct answer was: 'X'
+                $(".questionpage4").toggle();
+                $(".questionpage4false").toggle();
+                setTimeout(sevenSeconds4, 7000);
+              }
+          })
+          $("#q4true").on("click", function() {
+              q4true = true
+              console.log('q4true',q4true)
+              if (q4true === true) {
+                //new window display time Remaining
+                //text that says 'Correct'
+                //display gifimage of correct answer
+                $(".questionpage4").toggle();
+                $(".questionpage4true").toggle();
+                setTimeout(sevenSeconds4, 7000);
+              }
+          })
+        }
+        function questionpage5() {
+            //need to start timer, get timeout setup
+            $("#q5p1false,#q5p2false,#q5p3false").on("click", function() {
+                q5false = true
+                console.log('q5false',q5false)
+                if (q5false === true) {
+                  //new window display time Remaining
+                  //text that says 'Incorrect'
+                  //tell the correct answer was: 'X'
+                  $(".questionpage5").toggle();
+                  $(".questionpage5false").toggle();
+                  setTimeout(sevenSeconds5, 7000);
+                }
+            })
+            $("#q5true").on("click", function() {
+                q5true = true
+                console.log('q5true',q5true)
+                if (q5true === true) {
+                  //new window display time Remaining
+                  //text that says 'Correct'
+                  //display gifimage of correct answer
+                  $(".questionpage5").toggle();
+                  $(".questionpage5true").toggle();
+                  setTimeout(sevenSeconds5, 7000);
+                }
+            })
+          }
+          /*
+          function conclusionpage() {
+              //need to start timer, get timeout setup
+              $("#q5p1false,#q5p2false,#q5p3false").on("click", function() {
+                  q5false = true
+                  console.log('q5false',q5false)
+                  if (q5false === true) {
+                    //new window display time Remaining
+                    //text that says 'Incorrect'
+                    //tell the correct answer was: 'X'
+                    $(".questionpage5").toggle();
+                    $(".questionpage5false").toggle();
+                    setTimeout(sevenSeconds5, 7000);
+                  }
+              })
+              $("#q5true").on("click", function() {
+                  q5true = true
+                  console.log('q5true',q5true)
+                  if (q5true === true) {
+                    //new window display time Remaining
+                    //text that says 'Correct'
+                    //display gifimage of correct answer
+                    $(".questionpage5").toggle();
+                    $(".questionpage5true").toggle();
+                    setTimeout(sevenSeconds5, 7000);
+                  }
+              })
+            }
+            */
 
 
 

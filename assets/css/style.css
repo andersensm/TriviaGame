@@ -20,8 +20,16 @@
   padding: 0px;
   background-color: #8B4513;
 }
+.page5{
+  padding: 0px;
+  background-color: #FFDEAD;
+}
+.page6 {
+  padding: 0px;
+  background-color: #A991D4;
+}
 h1.display-3 {
-  font-weight: 600;
+  font-weight: 450;
   font-size: 125px;
   color: black;
   margin: 20px;
@@ -37,7 +45,7 @@ p {
     margin: 20px;
     text-align: center;
 }
-.begin, .btn-primary, .btn-secondary, .btn-success, .btn-info, .btn-warning, .btn-primary, .btn-danger, .btn-link{
+.begin, .btn-primary, .btn-secondary, .btn-success, .btn-info, .btn-warning, .btn-primary, .btn-danger, .btn-link, .btn-dark{
   margin: 20px;
   font-size: 35px;
   display:block;
@@ -62,5 +70,11 @@ img {
     margin-bottom: 20px;
     border: 1.5px solid black;
     border-bottom: 3px solid black;
-
+}
+footer h4 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 24px;
+  color: white;
 }
