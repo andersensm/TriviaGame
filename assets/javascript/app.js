@@ -78,18 +78,6 @@ function sevenSeconds5() {
  var intervalId;
  var time = 15
 
- function resetp3() {
-   time = 15;
-   $("#page3").text(time);
- }
- function resetp4() {
-   time = 15;
-   $("#page4").text(time);
- }
- function resetp5() {
-   time = 15;
-   $("#page5").text(time);
- }
 //-------------Page 1 Timers--------------------------
 function resetp1() {
   time = 15;
@@ -115,6 +103,7 @@ function countp1() {
     incorrect++
     $(".questionpage1").toggle(false);
     $(".questionpage1false").toggle(true);
+    stopI1()
     setTimeout(sevenSeconds1, 7000);
   }
 }
@@ -144,6 +133,7 @@ function countp2() {
     incorrect++
     $(".questionpage2").toggle(false);
     $(".questionpage2false").toggle(true);
+    stopI2()
     setTimeout(sevenSeconds2, 7000);
   }
 }
@@ -173,6 +163,7 @@ function countp3() {
     incorrect++
     $(".questionpage3").toggle(false);
     $(".questionpage3false").toggle(true);
+    stopI3()
     setTimeout(sevenSeconds3, 7000);
   }
 }
@@ -202,6 +193,7 @@ function countp4() {
     incorrect++
     $(".questionpage4").toggle(false);
     $(".questionpage4false").toggle(true);
+    stopI4()
     setTimeout(sevenSeconds4, 7000);
   }
 }
@@ -231,6 +223,7 @@ function countp5() {
     incorrect++
     $(".questionpage5").toggle(false);
     $(".questionpage5false").toggle(true);
+    stopI5()
     setTimeout(sevenSeconds5, 7000);
   }
 }
