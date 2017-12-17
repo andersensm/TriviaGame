@@ -18,26 +18,40 @@ var conclusion;
 var correct = 0
 var incorrect = 0
 
-if (begin === false) {
-  $(".start").toggle(true);
-  $(".questionpage1").toggle(false);
-  $(".questionpage1true").toggle(false);
-  $(".questionpage1false").toggle(false);
-  $(".questionpage2").toggle(false);
-  $(".questionpage2true").toggle(false);
-  $(".questionpage2false").toggle(false);
-  $(".questionpage3").toggle(false);
-  $(".questionpage3true").toggle(false);
-  $(".questionpage3false").toggle(false);
-  $(".questionpage4").toggle(false);
-  $(".questionpage4true").toggle(false);
-  $(".questionpage4false").toggle(false);
-  $(".questionpage5").toggle(false);
-  $(".questionpage5true").toggle(false);
-  $(".questionpage5false").toggle(false);
-  $(".conclusionpage6").toggle(false);
- }
-
+function superbeginning() {
+  if (begin === false) {
+    $(".start").toggle(true);
+    $(".questionpage1").toggle(false);
+    $(".questionpage1true").toggle(false);
+    $(".questionpage1false").toggle(false);
+    $(".questionpage2").toggle(false);
+    $(".questionpage2true").toggle(false);
+    $(".questionpage2false").toggle(false);
+    $(".questionpage3").toggle(false);
+    $(".questionpage3true").toggle(false);
+    $(".questionpage3false").toggle(false);
+    $(".questionpage4").toggle(false);
+    $(".questionpage4true").toggle(false);
+    $(".questionpage4false").toggle(false);
+    $(".questionpage5").toggle(false);
+    $(".questionpage5true").toggle(false);
+    $(".questionpage5false").toggle(false);
+    $(".conclusionpage6").toggle(false);
+    q1false;
+    q1true;
+    q2false;
+    q2true;
+    q3false;
+    q3true;
+    q4false;
+    q4true;
+    q5false;
+    q5true;
+    correct = 0
+    incorrect = 0
+    clickstart();
+   }
+}
 function sevenSeconds1() {
   $(".questionpage1false").toggle(false);
   $(".questionpage1true").toggle(false);
@@ -72,197 +86,92 @@ function sevenSeconds5() {
   $(".conclusionpage6").toggle(true);
   conclusionpage();
 }
-
-
 //**************
  var intervalId;
  var time = 15
-
-//-------------Page 1 Timers--------------------------
-function resetp1() {
+//-------------Timers--------------------------
+function reset() {
   time = 15;
-  $("#page1").text(time);
+  $(".timer").text("Time Remaining: " + time + " seconds.");
+}
+function stop() {
+  console.log("stopping");
+  clearInterval(intervalId);
+  $(".timer").text("Time Remaining: " + time + " seconds.");
 }
 function startp1() {
   intervalId = setInterval(countp1, 1000);
 }
-function stopI1() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#incorrectpage1").text(time);
-}
-function stopC1() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#correctpage1").text(time);
-}
-function countp1() {
-  time--;
-  $("#page1").text(time);
-  if (time === 0) {
-    incorrect++
-    $(".questionpage1").toggle(false);
-    $(".questionpage1false").toggle(true);
-    stopI1()
-    setTimeout(sevenSeconds1, 7000);
-  }
-}
-//-----------------------------------------------
-//-----------Page 2 Timers-----------------------
-function resetp2() {
-  time = 15;
-  $("#page2").text(time);
-}
 function startp2() {
   intervalId = setInterval(countp2, 1000);
-}
-function stopI2() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#incorrectpage2").text(time);
-}
-function stopC2() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#correctpage2").text(time);
-}
-function countp2() {
-  time--;
-  $("#page2").text(time);
-  if (time === 0) {
-    incorrect++
-    $(".questionpage2").toggle(false);
-    $(".questionpage2false").toggle(true);
-    stopI2()
-    setTimeout(sevenSeconds2, 7000);
-  }
-}
-//-----------------------------------------------
-//-----------Page 3 Timers-----------------------
-function resetp3() {
-  time = 15;
-  $("#page3").text(time);
 }
 function startp3() {
   intervalId = setInterval(countp3, 1000);
 }
-function stopI3() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#incorrectpage3").text(time);
-}
-function stopC3() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#correctpage3").text(time);
-}
-function countp3() {
-  time--;
-  $("#page3").text(time);
-  if (time === 0) {
-    incorrect++
-    $(".questionpage3").toggle(false);
-    $(".questionpage3false").toggle(true);
-    stopI3()
-    setTimeout(sevenSeconds3, 7000);
-  }
-}
-//-----------------------------------------------
-//-----------Page 4 Timers-----------------------
-function resetp4() {
-  time = 15;
-  $("#page4").text(time);
-}
 function startp4() {
   intervalId = setInterval(countp4, 1000);
-}
-function stopI4() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#incorrectpage4").text(time);
-}
-function stopC4() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#correctpage4").text(time);
-}
-function countp4() {
-  time--;
-  $("#page4").text(time);
-  if (time === 0) {
-    incorrect++
-    $(".questionpage4").toggle(false);
-    $(".questionpage4false").toggle(true);
-    stopI4()
-    setTimeout(sevenSeconds4, 7000);
-  }
-}
-//-----------------------------------------------
-//-----------Page 5 Timers-----------------------
-function resetp5() {
-  time = 15;
-  $("#page5").text(time);
 }
 function startp5() {
   intervalId = setInterval(countp5, 1000);
 }
-function stopI5() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#incorrectpage5").text(time);
+function countp1() {
+  time--;
+  $(".timer").text("Time Remaining: " + time + " seconds.");
+  if (time === 0) {
+    incorrect++
+    $(".questionpage1").toggle(false);
+    $(".questionpage1false").toggle(true);
+    stop()
+    setTimeout(sevenSeconds1, 7000);
+  }
 }
-function stopC5() {
-  console.log("stopping");
-  clearInterval(intervalId);
-  $("#correctpage5").text(time);
+function countp2() {
+  time--;
+  $(".timer").text("Time Remaining: " + time + " seconds.");
+  if (time === 0) {
+    incorrect++
+    $(".questionpage2").toggle(false);
+    $(".questionpage2false").toggle(true);
+    stop()
+    setTimeout(sevenSeconds2, 7000);
+  }
+}
+function countp3() {
+  time--;
+  $(".timer").text("Time Remaining: " + time + " seconds.");
+  if (time === 0) {
+    incorrect++
+    $(".questionpage3").toggle(false);
+    $(".questionpage3false").toggle(true);
+    stop()
+    setTimeout(sevenSeconds3, 7000);
+  }
+}
+function countp4() {
+  time--;
+  $(".timer").text("Time Remaining: " + time + " seconds.");
+  if (time === 0) {
+    incorrect++
+    $(".questionpage4").toggle(false);
+    $(".questionpage4false").toggle(true);
+    stop()
+    setTimeout(sevenSeconds4, 7000);
+  }
 }
 function countp5() {
   time--;
-  $("#page5").text(time);
+  $(".timer").text("Time Remaining: " + time + " seconds.");
   if (time === 0) {
     incorrect++
     $(".questionpage5").toggle(false);
     $(".questionpage5false").toggle(true);
-    stopI5()
+    stop()
     setTimeout(sevenSeconds5, 7000);
   }
 }
-//-----------------------------------------------
-
 function resetGame() {
-  begin = false
-  $(".start").toggle(true);
-  $(".questionpage1").toggle(false);
-  $(".questionpage1true").toggle(false);
-  $(".questionpage1false").toggle(false);
-  $(".questionpage2").toggle(false);
-  $(".questionpage2true").toggle(false);
-  $(".questionpage2false").toggle(false);
-  $(".questionpage3").toggle(false);
-  $(".questionpage3true").toggle(false);
-  $(".questionpage3false").toggle(false);
-  $(".questionpage4").toggle(false);
-  $(".questionpage4true").toggle(false);
-  $(".questionpage4false").toggle(false);
-  $(".questionpage5").toggle(false);
-  $(".questionpage5true").toggle(false);
-  $(".questionpage5false").toggle(false);
-  $(".conclusionpage6").toggle(false);
-  q1false;
-  q1true;
-  q2false;
-  q2true;
-  q3false;
-  q3true;
-  q4false;
-  q4true;
-  q5false;
-  q5true;
-  correct = 0
-  incorrect = 0
-  clickstart();
+  superbeginning();
 }
-//cleancode---------------------------------------------------------------------
 function clickstart() {
   console.log('clickStart')
   $("#begin").off().on("click", function() {
@@ -271,19 +180,13 @@ function clickstart() {
       $(".start").toggle(false);
       $(".questionpage1").toggle(true);
       questionpage1()
-
     }
   })
 }
-//cleancode---------------------------------------------------------------------
-//------------------------------------------------------------------------------
-//working on code below
-//------------------------------------------------------------------------------
 function questionpage1() {
-    resetp1();
+    reset();
     startp1();
     countp1();
-    //need to start timer, get timeout setup
     $("#q1p1false,#q1p2false,#q1p3false").off().on("click", function() {
         q1false = true
         console.log('q1false',q1false)
@@ -294,11 +197,10 @@ function questionpage1() {
           incorrect++
           $(".questionpage1").toggle(false);
           $(".questionpage1false").toggle(true);
-          stopI1()
+          stop()
           setTimeout(sevenSeconds1, 7000);
         }
     })
-
     $("#q1true").off().on("click", function() {
         $(".timer").toggle(true);
         q1true = true
@@ -310,13 +212,13 @@ function questionpage1() {
           correct++
           $(".questionpage1").toggle(false);
           $(".questionpage1true").toggle(true);
-          stopC1()
+          stop()
           setTimeout(sevenSeconds1, 7000);
         }
     })
   }
 function questionpage2() {
-      resetp2();
+      reset();
       startp2();
       countp2();
       //need to start timer, get timeout setup
@@ -330,7 +232,7 @@ function questionpage2() {
             incorrect++
             $(".questionpage2").toggle(false);
             $(".questionpage2false").toggle(true);
-            stopI2()
+            stop()
             setTimeout(sevenSeconds2, 7000);
           }
       })
@@ -344,13 +246,13 @@ function questionpage2() {
             correct++
             $(".questionpage2").toggle(false);
             $(".questionpage2true").toggle(true);
-            stopC2()
+            stop()
             setTimeout(sevenSeconds2, 7000);
           }
       })
     }
 function questionpage3() {
-        resetp3();
+        reset();
         startp3();
         countp3();
         //need to start timer, get timeout setup
@@ -364,7 +266,7 @@ function questionpage3() {
               incorrect++
               $(".questionpage3").toggle(false);
               $(".questionpage3false").toggle(true);
-              stopI3()
+              stop()
               setTimeout(sevenSeconds3, 7000);
             }
         })
@@ -378,13 +280,13 @@ function questionpage3() {
               correct++
               $(".questionpage3").toggle(false);
               $(".questionpage3true").toggle(true);
-              stopC3()
+              stop()
               setTimeout(sevenSeconds3, 7000);
             }
         })
       }
 function questionpage4() {
-          resetp4();
+          reset();
           startp4();
           countp4();
           //need to start timer, get timeout setup
@@ -398,7 +300,7 @@ function questionpage4() {
                 incorrect++
                 $(".questionpage4").toggle(false);
                 $(".questionpage4false").toggle(true);
-                stopI4()
+                stop()
                 setTimeout(sevenSeconds4, 7000);
               }
           })
@@ -412,13 +314,13 @@ function questionpage4() {
                 correct++
                 $(".questionpage4").toggle(false);
                 $(".questionpage4true").toggle(true);
-                stopC4()
+                stop()
                 setTimeout(sevenSeconds4, 7000);
               }
           })
 }
 function questionpage5() {
-            resetp5();
+            reset();
             startp5();
             countp5();
             //need to start timer, get timeout setup
@@ -432,7 +334,7 @@ function questionpage5() {
                   incorrect++
                   $(".questionpage5").toggle(false);
                   $(".questionpage5false").toggle(true);
-                  stopI5()
+                  stop()
                   setTimeout(sevenSeconds5, 7000);
                 }
             })
@@ -446,7 +348,7 @@ function questionpage5() {
                   correct++
                   $(".questionpage5").toggle();
                   $(".questionpage5true").toggle();
-                  stopC5()
+                  stop()
                   setTimeout(sevenSeconds5, 7000);
                 }
             })
@@ -469,6 +371,6 @@ function conclusionpage() {
               })
             }
 
-clickstart();
+superbeginning();
 
 })
