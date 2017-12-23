@@ -91,6 +91,8 @@ function sevenSeconds5() {
  var time = 15
 //-------------Timers--------------------------
 function reset() {
+  correct = 0
+  incorrect = 0
   time = 15;
   $(".timer").text("Time Remaining: " + time + " seconds.");
 }
@@ -186,7 +188,6 @@ function clickstart() {
 function questionpage1() {
     reset();
     startp1();
-    countp1();
     $("#q1p1false,#q1p2false,#q1p3false").off().on("click", function() {
         q1false = true
         console.log('q1false',q1false)
@@ -220,7 +221,6 @@ function questionpage1() {
 function questionpage2() {
       reset();
       startp2();
-      countp2();
       //need to start timer, get timeout setup
       $("#q2p1false,#q2p2false,#q2p3false").off().on("click", function() {
           q2false = true
@@ -254,7 +254,6 @@ function questionpage2() {
 function questionpage3() {
         reset();
         startp3();
-        countp3();
         //need to start timer, get timeout setup
         $("#q3p1false,#q3p2false,#q3p3false").off().on("click", function() {
             q3false = true
@@ -288,7 +287,6 @@ function questionpage3() {
 function questionpage4() {
           reset();
           startp4();
-          countp4();
           //need to start timer, get timeout setup
           $("#q4p1false,#q4p2false,#q4p3false").off().on("click", function() {
               q4false = true
@@ -322,7 +320,6 @@ function questionpage4() {
 function questionpage5() {
             reset();
             startp5();
-            countp5();
             //need to start timer, get timeout setup
             $("#q5p1false,#q5p2false,#q5p3false").off().on("click", function() {
                 q5false = true
